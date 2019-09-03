@@ -1,56 +1,15 @@
 {
-    "name": "tenancy/tenancy",
-    "description": "Creating multi tenant saas from your Laravel app with ease",
-    "keywords": ["laravel", "multi-tenant", "saas", "tenancy", "aws", "gce"],
+    "name": "tenancy/affects-models",
+    "description": "The tenancy/tenancy eloquent models mutations",
+    "keywords": ["affects", "tenancy", "models"],
     "license": "MIT",
     "require": {
-        "laravel/framework": "5.8.*",
-        "psr/container": "^1.0.0",
-        "doctrine/dbal": "^2.9"
-    },
-    "require-dev": {
-        "fzaninotto/faker": "^1.7",
-        "laravel/laravel": "5.8.*",
-        "phpunit/phpunit": "^8.0",
-        "mockery/mockery": "^1.0",
-        "squizlabs/php_codesniffer": "^3.3",
-        "psalm/plugin-laravel": "^0.0.5",
-        "zendframework/zend-diactoros": "^1.0"
+        "tenancy/framework": "*"
     },
     "autoload": {
         "psr-4": {
-            "Tenancy\\": "src/Tenancy",
-            "Tenancy\\Affects\\": "src/Affects",
-            "Tenancy\\Database\\Drivers\\": "src/Database",
-            "Tenancy\\Hooks\\": "src/Hooks",
-            "Tenancy\\Identification\\Drivers\\": "src/Identification"
+            "Tenancy\\Affects\\Models\\": ""
         }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Tenancy\\Testing\\": "src/Testing",
-            "Tenancy\\Tests\\": "tests/unit/Tenancy",
-            "Tenancy\\Tests\\Affects\\": "tests/unit/Affects",
-            "Tenancy\\Tests\\Database\\": "tests/unit/Database",
-            "Tenancy\\Tests\\Hooks\\": "tests/unit/Hooks",
-            "Tenancy\\Tests\\Identification\\": "tests/unit/Identification"
-        }
-    },
-    "replace": {
-        "tenancy/framework": "self.version",
-        "tenancy/testing": "self.version",
-        "tenancy/affects-cache": "self.version",
-        "tenancy/affects-config": "self.version",
-        "tenancy/affects-filesystem": "self.version",
-        "tenancy/affects-logs": "self.version",
-        "tenancy/affects-routes": "self.version",
-        "tenancy/affects-url": "self.version",
-        "tenancy/affects-views": "self.version",
-        "tenancy/database-driver-mysql": "self.version",
-        "tenancy/database-driver-sqlite": "self.version",
-        "tenancy/identification-driver-console": "self.version",
-        "tenancy/identification-driver-environment": "self.version",
-        "tenancy/identification-driver-http": "self.version"
     },
     "authors": [
         {
@@ -64,31 +23,11 @@
             "homepage": "https://arlonantonius.com"
         }
     ],
-    "scripts": {
-        "test": [
-            "vendor/bin/phpunit"
-        ]
-    },
     "extra": {
         "laravel": {
             "providers": [
-                "Tenancy\\Providers\\TenancyProvider",
-                "Tenancy\\Affects\\Cache\\Provider",
-                "Tenancy\\Affects\\Config\\Provider",
-                "Tenancy\\Affects\\Connection\\Provider",
-                "Tenancy\\Affects\\Filesystem\\Provider",
-                "Tenancy\\Affects\\Logs\\Provider",
-                "Tenancy\\Affects\\Routes\\Provider",
-                "Tenancy\\Affects\\URL\\Provider",
-                "Tenancy\\Affects\\Views\\Provider",
-                "Tenancy\\Identification\\Drivers\\Console\\Providers\\IdentificationProvider",
-                "Tenancy\\Identification\\Drivers\\Environment\\Providers\\IdentificationProvider",
-                "Tenancy\\Identification\\Drivers\\Http\\Providers\\IdentificationProvider",
-                "Tenancy\\Identification\\Drivers\\Queue\\Providers\\IdentificationProvider"
-            ],
-            "aliases": {
-                "Tenancy": "Tenancy\\Facades\\TenancyFacade"
-            }
+                "Tenancy\\Affects\\Models\\Provider"
+            ]
         }
     }
 }
